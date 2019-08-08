@@ -4,9 +4,24 @@
 записывать ее в последнюю ячейку строки.
 В конце следует вывести полученную матрицу.
 """
-import random
+from random import random
 
-arr = [random.choice([i for i in range(10)]) for j in range(4)]
-print(arr)
+N = 5
+M = 4
+matrix = []
+step = 1
 
-arr1 = [[1,1,1,1], [2,2,2,2], [3,3,3,3]
+for i in range(M):
+    arr = []
+    sum = 0
+    for j in range(N - 1):
+        num = int(random() * 5)
+        arr.append(num)
+        sum += num
+        # print(user_num, end=' ')
+    arr.append(sum)
+    print(f'Сумма 4-х элементов: {sum} добавлена в конец списка {step}')
+    step +=1
+    matrix.append(arr)
+print('Получившаяся матрица:')
+print(matrix)
